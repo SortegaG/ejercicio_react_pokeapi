@@ -1,0 +1,31 @@
+.pokelist {
+    text-align: center;
+
+    .pokemon-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .pokemon-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+
+        .pokemon-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .pokemon-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    }
+}
