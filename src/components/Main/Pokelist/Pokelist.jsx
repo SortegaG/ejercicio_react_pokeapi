@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import '../../styles/PokeList.scss'
+import '../../../styles/PokeList.scss'
 import { v4 as uuidv4 } from 'uuid';
 
 
