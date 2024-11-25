@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Search from "./Search";
 import PokeList from "./PokeList";
 import axios from "axios";
+import {DebounceInput} from 'react-debounce-input';
 
 
-const App = () => {
+
+const Main = () => {
   const [pokemonList, setPokemonList] = useState([]); 
 
   const handleSearch = async (pokemonName) => {
@@ -31,4 +33,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Main;
