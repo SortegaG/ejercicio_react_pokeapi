@@ -1,36 +1,21 @@
-import React, { useState } from "react";
-import Search from "./Search";
-import PokeList from "./PokeList";
-import axios from "axios";
-import {DebounceInput} from 'react-debounce-input';
-
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Buscador from './Buscador/Buscador';
 
 
 const Main = () => {
-  const [pokemonList, setPokemonList] = useState([]); 
-
-  const handleSearch = async (pokemonName) => {
-    try {
-      const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-      const data = res.data;
-
-      const newPokemon = {
-        name: data.name,
-        sprite: data.sprites.front_default,
-      };
-
-      setPokemonList((prevList) => [...prevList, newPokemon]); 
-    } catch (err) {
-      console.error("No se encontró el Pokémon:", err);
-    }
-  };
 
   return (
-    <>
-      <Search onSearch={handleSearch} />
-      <PokeList pokemonList={pokemonList} />
-    </>
+    <div>
+      <main>
+      <Routes>
+          { <Route path='/' element={<Buscador/>} /> }
+          { <Route path='/*' element={<Navigate to='/' />} /> }
+        </Routes> 
+      </main>
+    </div>
   );
 };
 
-export default Main;
+
+
+export default Main; 
